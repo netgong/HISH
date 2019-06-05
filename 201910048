@@ -1,0 +1,54 @@
+//}
+//
+//int mul(int n, int m) {
+//	return n * m;
+//}
+//
+//int div(int n, int m) {
+//	return n / m;
+//}
+//
+//int mod(int n, int m) {
+//	return n % m;
+//}
+//
+//int main() {
+//	int n, m;
+//	char a;
+//	scanf("%d%c%d", &n, &a, &m);
+//
+//	printf("%d%c%d=", n, a, m);
+//
+//	if (a == '+')
+//		printf("%d", add(n, m));  // if문을 사용하여 조건에 맞게 출력 
+//	if (a == '-')
+//		printf("%d", sub(n, m));
+//	if (a == '*')
+//		printf("%d", mul(n, m));
+//	if (a == '/')
+//		printf("%d", div(n, m));
+//	if (a == '%')
+//		printf("%d", mod(n, m));
+//
+//	return 0;
+//}
+
+
+//  3번 포인터
+#include <stdio.h>
+//
+//void swap(int a, int b);
+//
+//int main()
+//
+//{
+//
+//	int a = 5;  // a,b 의 값을 선언 
+//	int b = 10;
+//	printf("before a: %d b: %d\n", a, b); // a,b의 값을 출력 
+//
+//	swap(&a, &b);  // 메인함수에서 swap 함수를 호출 
+//
+//	printf("after a: %d b: %d\n", a, b);  // 위치 변경후의 값을 출력
+//
+//}
