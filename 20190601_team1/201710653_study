@@ -1,0 +1,223 @@
+#include <stdio.h>
+
+typedef struct grade { // 구조체 변수를 선언해줄때 struct 일일이 써주기 귀찮아서 typedef 을 써줌 grade 라는 구조체명을 가진 구조체 선언
+	char name[20];
+	int lan;  // 구조체의 멤버로는 학생수를 넣어줄 name  국어,수학,영어 를 넣어줄 lan,math,english 선언
+	int math;
+	int english;
+} grade; // 구조체 별칭으로 grade 선언
+
+int main()
+{
+	grade park = { "정연",100,100,100 };  // 구조체 변수 park을 선언해주고 구조체 멤버안에 첫번째 학생의 정보로 초기화해줌
+	grade go = { "경준",53,57,58 };  // 구조체 변수 go 를 선언해주고 학생 정보로 초기화
+	grade jeng = { "대윤",89,87,78 }; // 구조체 변수 jeng 를 선언해주고 학생 정보로 초기화
+
+
+	double avg = (park.lan + park.math + park.english) / 3; // double 형 avg,avg2,avg3 선언해주고 학생들의 평균 점수를 넣어줌.
+	double avg2 = (go.lan + go.math + go.english) / 3;
+	double avg3 = (jeng.lan + jeng.math + jeng.english) / 3;
+
+	printf("%s %.1lf\n", park.name, avg);  // 학생들의 이름과 평균점수를 소수점 첫째자리까지 출력 
+	printf("%s %.1lf\n", go.name, avg2);
+	printf("%s %.1lf\n", jeng.name, avg3);
+}
+
+
+//#include <Stdio.h>
+//
+//typedef struct grade {
+//	char name[20];
+//	int lan;
+//	int math;
+//	int english;
+//} grade ;
+//
+//int main()
+//{
+//	/*grade student = {};*/
+//
+//	grade park = {"정연",100,100,100 };
+//	grade go = {"경준",53,57,58 };
+//	grade jeng = {"대윤",89,87,78 };
+//
+//	printf("학생 이름 입력 :");
+//	scanf("%s",park.name);
+//	
+//	if (park.name == park.name)
+//	{
+//		double avg = (park.lan + park.math + park.english) / 3;
+//		printf("%s %lf", park.name, avg);
+//	}
+//	else if (park.name == "경준")
+//	{
+//		double avg = (go.lan + go.math + go.english) / 3;
+//		printf("%s %lf", go.name, avg);
+//	}
+//	else if (park.name == jeng.name)
+//	{
+//		double avg = (jeng.lan + jeng.math + jeng.english) / 3;
+//		printf("%s %lf", jeng.name, avg);
+//	}
+//}
+
+
+//#include <stdio.h>
+//
+//void swap(int *p, int *p2); // 포인터 변수를 매개변수로 받는 반환형 없는 swap 함수의 원형
+//
+//int main()
+//{
+//	int a = 10;  // 값을 교환해줄 용도로 쓸 정수형 변수 a와 b 선언
+//	int b = 20;
+//
+//	int* p = &a;   // 값을 교환해줄 수단으로 쓸 포인터 변수 p와 p2 선언 후 a 와 b 의 주소를 가리키게 함
+//	int* p2 = &b;
+//
+//	swap(p,p2);   // swap 함수를 호출하며 인자로 p,p2 포인터 변수를 넘겨주고 있다.
+//
+//	printf("%d %d", a, b);  // a와 b의 값을 출력
+//}
+//void swap(int *p, int *p2)  
+//{
+//	int temp;  // 값을 임시저장해주고 넘겨줄 수 있는 연결고리가 되주는 변수를 선언
+//	temp = *p; // temp에 p가 가리키고 있는 a의 값을 넣어준다
+//	*p = *p2;  //  p2 가 가리키고 있는 b의 값을 p가 가리키고 있는 a의 값으로 넣어준다
+//	*p2 = temp;  //  temp 가 가지고 있는 값 (*p의 값) 을 p2가 가리키고 있는 b의 값으로 넣어준다. 
+//}   
+
+//#include <Stdio.h>
+//
+//int mod(int x, int y);  
+//
+//int main()
+//{
+//	int a, b, tot; // 정수형 변수 a,b,tot 선언
+//
+//	scanf("%d %d", &a, &b); // a와 b의 값을 입력받음
+//
+//	tot = mod(a, b); // mod 함수를 호출하며 a와b를 인수로 던져주고 돌려받은 값을 tot에 초기화해줌
+// 
+//	printf("%d\n", tot); // tot 출력
+//}
+//int mod(int x, int y) // 반환형은 int 함수명은 mod  parameter 로는 int x, int y를 받음
+//{
+//	return x % y; // x에서 y를 나눈 후에 나머지 값을 함수를 호출한 곳에 리턴해준다.
+//}
+
+
+
+//#include <Stdio.h>
+//
+//int div(int x, int y);  //메인함수보다 먼저 나오기 위해 함수의 원형을 써주고 ;을 써줌
+//
+//int main()
+//{
+//	int a,b,tot; // 정수형 변수 a,b,tot 선언
+//
+//	scanf("%d %d", &a, &b); //a와 b값을 입력받음
+//
+//	tot = div(a, b); // div함수를 호출하며 인수로 a,b 를 던져주고 돌려받은 값을 tot에 초기화해줌
+//
+//	printf("a/b = %d\n", tot); // tot 출력
+//}
+//int div(int x, int y) // 반환형은 int 함수명은 div 매개변수로는 int x,int y를 받는다.
+//{
+//	return x / y; // x를 y로 나눈 값을 함수를 호출한 곳에 return 해준다.
+//}
+
+
+
+//#include <Stdio.h>
+//int mul(int x,int y);
+//int main()
+//
+//	int a, b, tot;  // 정수형 변수 a,b,tot 선언
+//
+//	scanf("%d %d", &a, &b); // a와b변수 주소값을 주고 입력한 값을 주었던 주소에 넣어줌
+//
+//	tot = mul(a, b); // mul 함수를 호출하면서 인수로 a와b 변수를 주고 돌려받은 값을 tot 변수에 초기화해줌
+//
+//	printf("a*b=%d\n", tot); // tot 변수 출력
+//}
+//
+//int mul(int x, int y) // 반환형은 int 함수명은 mul 매개변수로는 정수형 변수 x와 y를 받음
+//{
+//	int result; //값을 저장해줄 result 변수 선언
+//
+//	result = x * y;  // 매개변수로 받은 x와 y를 곱해 result에 초기화 해줌
+//
+//	return result; // result를 함수를 호출한 곳에 return 해줌
+//}
+
+
+
+
+//#include <stdio.h>
+//int sub(int x,int y);
+//int main()
+//{
+//	int a, b, tot;    // 정수를 입력할 변수 a,b 와  a에서 b 뺀 값을 받을 변수 tot 선언
+//
+//	scanf("%d %d", &a, &b); // 두 정수를 입력받음
+//
+//	tot = sub(a, b); // add 함수를 호출하며 인수로 입력받은 두 정수를 준후에 return 받은 값을 tot 변수에 초기화.
+//
+//	printf("a-b는 : %d\n", tot); // tot 변수를 출력
+//}
+//int sub(int x, int y) // 반환형은 int 함수명은 add 매개변수로는 정수형 변수 x와 y를 받는다.
+//{
+//	return x - y; // 인수로 받은 정수형 변수 x에서 y를 빼준후에 함수를 호출한 곳에 return 해준다.
+//}
+
+
+
+
+//#include <stdio.h>
+//int add(int x,int y);
+//int main()
+//{
+//	int a, b, tot;    // 정수를 입력할 변수 a,b 와 두 정수의 합을 더해줄 변수 tot 선언
+//
+//	scanf("%d %d", &a, &b); // 두 정수를 입력받음
+//
+//	tot = add(a, b); // add 함수를 호출하며 인수로 입력받은 두 정수를 준후에 return 받은 값을 tot 변수에 초기화.
+//
+//	printf("두 정수의 합은 : %d\n", tot); // tot 변수를 출력
+//}
+//int add(int x,int y) // 반환형은 int 함수명은 add 매개변수로는 정수형 변수 x와 y를 받는다.
+//{
+//	return x + y; // 인수로 받은 정수형 변수 x,y를 더해준후에 함수를 호출한 곳에 return 해준다.
+//}
+
+
+
+//#include <stdio.h>  
+//#include <String.h>  // strcpy 함수를 사용하기 위해 <String.h> 헤더 파일을 추가
+//
+//
+//int main()
+//
+//{
+///*	char input[100]; */ //문자열을 입력받을 배열 선언
+//	char bracket[100]; // 문자열을 복사받을 배열 선언
+//	int sum = 0; // '(' 의 갯수를 카운트 해줄 정수형 변수 선언
+//	int sum2 = 0; // ')' 의 갯수를 카운트 해줄 정수형 변수 선언
+//
+//	scanf("%s", bracket); //문자열을 입력받는다
+//	/*strcpy(bracket, input);*/ //  input에 문자열을 bracket 에 복사해준다
+//
+//	for (int i = 0; i < sizeof(bracket)/sizeof(char); i++) 
+//	{
+//		if (bracket[i]==40)  // bracket 배열 요소가 '(' 와 같으면 sum 에 1을 더해준다.
+// 		{
+//			sum += 1;
+//		}
+//		else if (bracket[i] == 41) //bracket 배열 요소가 ')'와 같으면 sum2 에 1을 더해준다.
+//		{
+//			sum2 += 1;
+//		}
+//	}
+//	printf("%d %d", sum, sum2); //최종적으로 '(' , ')' 에 갯수에 따라서 sum,sum2 변수가 증가한 값을 출력해준다.
+//}
+// 다시 생각해보니 문자열을 복사할 필요가 없는 것 같은데 혹시 몰라서 주석 처리 했으
